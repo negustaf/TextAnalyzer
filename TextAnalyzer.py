@@ -1,9 +1,3 @@
-# Analyze Text with a TextAnalyzer object!
-#
-# By: Noah Gustafson
-
-# commit 4
-
 import unittest  # import the library needed for testing
 import math
 import csv
@@ -152,8 +146,6 @@ class TextAnalyzer:
         the other text using cosine similarity."""
         pass
 
-# These are the tests.
-
 class TestSentenceCount(unittest.TestCase):
 
     def test_sentence_count_tiny1(self):
@@ -248,7 +240,6 @@ class TestFrequencyOf(unittest.TestCase):
         self.assertEqual(ta.frequency_of('tea'), 1)
         self.assertEqual(ta.frequency_of('coffee'), 0)
 
-
 class TestVocabulary(unittest.TestCase):
 
     def test_vocabulary_tiny1(self):
@@ -334,7 +325,6 @@ class TestWriteAnalysis(unittest.TestCase):
         self.assertEqual(lines[1], ['files_for_testing/tinyfile_4.txt', '10','1','so'])
         f.close()
 
-
 class TestSimilarity(unittest.TestCase):
     def test_similarity_when_all_same(self):
         ta1 = TextAnalyzer("files_for_testing/tinyfile_1.txt")
@@ -351,12 +341,10 @@ class TestSimilarity(unittest.TestCase):
         ta2 = TextAnalyzer("files_for_testing/tinyfile_3.txt")
         self.assertAlmostEqual(ta1.similarity_with(ta2), 0.16666666666666666)
 
-
     def test_similarity_when_somewhat_different2(self):
         ta1 = TextAnalyzer("files_for_testing/tinyfile_4.txt")
         ta2 = TextAnalyzer("files_for_testing/tinyfile_3.txt")
         self.assertAlmostEqual(ta1.similarity_with(ta2), 1.125)
-
 
 if __name__ == "__main__":
     # Un-comment this line when you are ready to run the unit tests.
